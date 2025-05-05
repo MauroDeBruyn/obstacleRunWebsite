@@ -1,0 +1,286 @@
+header
+{
+  position: absolute;
+  left: 30px;
+  top: 10px;
+}
+
+.site-identity h1
+{
+  font-size: 1.5em;
+  margin: .6em 0;
+  display: inline-block;
+}
+
+.site-navigation ul,
+.site-navigation li
+{
+  margin: 0;
+  padding: 0;
+}
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-navigation li
+{
+  display: inline-block;
+  margin: 1.4em 1em 1em 1em;
+}
+
+.background
+{
+  background-color: #254117;
+  background-image: url('../images/sahara.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: grid;
+  background-position: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.background_blur
+{
+  background-color: black;
+  background-image: url('Pictures/Banner_blur.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display:grid;
+}
+
+.headLink
+{
+  font-size: 17px;
+  text-align: left;
+  line-height: 36px;
+  font-family: Verdana, sans-serif;
+  font-variant: small-caps
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+a:link
+{
+     text-decoration: none;
+}
+
+a:visited
+{
+     text-decoration: none;
+}
+
+a:hover
+{
+     text-decoration: none;
+}
+
+a:active
+{
+     text-decoration: none;
+}
+
+a
+{
+  color: #e6e6e6;
+}
+
+h1
+{
+  font-family: Arial, sans-serif;
+  font-size: 50px;
+  color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* HEADING STYLE */
+.one h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  padding-top: 80px;
+  font-weight: normal;
+  letter-spacing: 20px;
+}
+
+.one h1:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #b80000;
+}
+
+.one h1:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #b80000;
+}
+
+/* Social buttons */
+.wrapper{
+  display:inline-flex;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.wrapper .icon{
+  margin: 0 20px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  position: relative;
+  z-index:2;
+}
+
+.wrapper .icon span{
+  position:relative;
+  z-index:2;
+  height: 40px;
+  width: 40px;
+  display:block;
+  background: #d9d9d9;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  border-radius:50%;
+  text-align:center;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon span i{
+  font-size:25px;
+  line-height:60px;
+}
+
+.wrapper .icon .tooltip{
+  position:absolute;
+  top:0px;
+  background: #fff;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  font-size: 20px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  color:white;
+  opacity:0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon .tooltip:before{
+  position:absolute;
+  content:"";
+  height:15px;
+  width:15px;
+  bottom:-8px;
+  left:50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.wrapper .icon:hover span,
+.wrapp .icon:hover .tooltip{
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+}
+.wrapper .icon:hover span{
+  color: #fff;
+}
+
+.wrapper .spotify:hover span,
+.wrapper .spotify:hover .tooltip,
+.wrapper .spotify:hover .tooltip:before{
+  background:#1db954;
+}
+.wrapper .instagram:hover span,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip:before{
+  background:#d62976;
+}
+.wrapper .soundcloud:hover span,
+.wrapper .soundcloud:hover .tooltip,
+.wrapper .soundcloud:hover .tooltip:before{
+  background:#ff7700;
+}
+.wrapper .youtube:hover span,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip:before{
+  background:#de463b;
+}
+
+svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    padding-top: 10px; /*margin-top doesn't work*/
+}
+
+/*Images*/
+#image-gallery {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#current-image {
+  width: 100%;
+  margin-top: 40px;
+  border: 2px solid #1a1a1a;
+}
+
+#image-thumbs {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+div.feed
+{
+  margin-top: 100px;
+}
+
+.logo img {
+  height: 350px;
+  width: auto;
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.logo {
+  padding: 10px;
+}
