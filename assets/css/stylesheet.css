@@ -466,3 +466,61 @@ div.feed {
     opacity: 0.9;
   }
 }
+
+.card-section {
+  width: 100vw;               /* Full width of the viewport */
+  padding: 40px 5%;
+  background-color: #254117bb; /* Slight transparency */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  opacity: 0; /* Start with opacity 0 for fade-in */
+  transform: translateY(40px); /* Start slightly below */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  z-index: 999; /* Ensure it's above other content */
+}
+
+.card-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 280px;
+  height: 300px; /* Taller cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 70%; /* Take up 70% of card height */
+  object-fit: cover;
+}
+
+.card p {
+  padding: 20px 10px;
+  font-size: 16px;
+  color: #254117;
+  font-weight: bold;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
