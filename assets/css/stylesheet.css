@@ -1,3 +1,4 @@
+
 header
 {
   position: absolute;
@@ -51,7 +52,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 .background_blur
 {
   background-color: black;
@@ -68,26 +68,14 @@ html {
   text-align: left;
   line-height: 36px;
   font-family: Verdana, sans-serif;
-  font-variant: small-caps
+  font-variant: small-caps;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
 
-a:link
-{
-     text-decoration: none;
-}
-
-a:visited
-{
-     text-decoration: none;
-}
-
-a:hover
-{
-     text-decoration: none;
-}
-
+a:link,
+a:visited,
+a:hover,
 a:active
 {
      text-decoration: none;
@@ -109,7 +97,6 @@ h1
   text-align: center;
 }
 
-/* HEADING STYLE */
 .one h1 {
   text-align: center;
   text-transform: uppercase;
@@ -143,7 +130,6 @@ h1
   background-color: #254117;
 }
 
-/* Social buttons */
 .wrapper{
   display:inline-flex;
   position: absolute;
@@ -204,7 +190,7 @@ h1
   transform: translateX(-50%) rotate(45deg);
 }
 .wrapper .icon:hover span,
-.wrapp .icon:hover .tooltip{
+.wrapper .icon:hover .tooltip{
   text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
 }
 .wrapper .icon:hover span{
@@ -232,10 +218,9 @@ svg {
     margin-left: auto;
     margin-right: auto;
     height: auto;
-    padding-top: 10px; /*margin-top doesn't work*/
+    padding-top: 10px;
 }
 
-/*Images*/
 #image-gallery {
   width: 600px;
   margin: 0 auto;
@@ -261,8 +246,7 @@ svg {
   cursor: pointer;
 }
 
-div.feed
-{
+div.feed {
   margin-top: 100px;
 }
 
@@ -304,4 +288,181 @@ div.feed
 .inschrijven-buttons button:hover {
   background-color: #17280e;
   opacity: 0.7;
+}
+
+/* Default (hidden) logo style */
+.logo-mobile {
+  display: none;  /* Hide logo by default */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.logo-mobile img {
+  width: 130px; /* Adjust logo size */
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .logo-mobile {
+    display: block;  /* Show the logo on mobile */
+  }
+
+  header {
+    position: static;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .wrapper {
+    position: static;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+
+  .site-navigation li {
+    display: block;
+    text-align: center;
+    margin: 1em 0;
+  }
+
+  .logo img {
+    position: static;
+    max-width: 90%;
+    height: auto;
+    transform: none;
+    margin: 20px auto;
+  }
+
+  #image-gallery {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .site-identity h1 {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 32px;
+    padding: 10px;
+  }
+
+  .one h1 {
+    padding-top: 60px;
+    letter-spacing: 10px;
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  /* Hide social buttons on mobile */
+  .wrapper {
+    display: none;
+  }
+
+  /* Hamburger menu for navigation */
+  .site-navigation {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #254117;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .site-navigation.active {
+    display: block;
+  }
+
+  .site-navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .site-navigation li {
+    margin: 1em 0;
+    display: block;
+  }
+
+  /* Hamburger icon */
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+
+  .hamburger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: #e6e6e6;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .hamburger-menu.active div:nth-child(1) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: 8px;
+  }
+
+  .hamburger-menu.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active div:nth-child(3) {
+    transform: rotate(45deg);
+    position: relative;
+    top: -8px;
+  }
+
+  .hamburger-menu.active + .site-navigation {
+    display: block;
+  }
+
+  .inschrijven-buttons {
+    display: flex;
+    justify-content: space-between;  /* Distribute buttons evenly */
+    gap: 10px;  /* Optional: Add some space between buttons */
+    margin: 20px auto;
+    width: 100%; /* Make the container full-width */
+  }
+
+  .inschrijven-buttons button {
+    width: 48%;  /* Make buttons take up 48% of the container width (leaving some space between them) */
+    padding: 20px;
+    font-size: 16px;  /* Adjust font size for mobile */
+    font-weight: 600;
+    background-color: #254117;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    opacity: 0.9;
+  }
 }
