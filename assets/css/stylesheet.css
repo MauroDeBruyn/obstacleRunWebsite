@@ -90,7 +90,7 @@ h1
 {
   font-family: Arial, sans-serif;
   font-size: 50px;
-  color: #f2f2f2;
+  color: #dddddd;
   margin: 0;
   padding: 20px;
   text-transform: uppercase;
@@ -268,7 +268,7 @@ div.feed {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin: 40px auto;
+  margin: 250px auto 40px auto;
   align-items: center;
   height: 60vh;
 }
@@ -468,32 +468,30 @@ div.feed {
 }
 
 .card-section {
-  width: 100vw;               /* Full width of the viewport */
+  width: 100vw;
   padding: 40px 5%;
-  background-color: #254117bb; /* Slight transparency */
+  background-color: #254117bb;
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Zorg ervoor dat de kaarten in meerdere rijen kunnen komen als er niet genoeg ruimte is */
+  gap: 30px; /* Ruimte tussen de kaarten */
+  align-items: center; /* Zorg ervoor dat de kaarten verticaal gecentreerd zijn */
+  justify-content: center; /* Centrerende opstelling */
   box-sizing: border-box;
-  opacity: 0; /* Start with opacity 0 for fade-in */
-  transform: translateY(40px); /* Start slightly below */
+  opacity: 0;
+  transform: translateY(40px);
   transition: opacity 1s ease-out, transform 1s ease-out;
-  z-index: 999; /* Ensure it's above other content */
+  z-index: 999;
+  margin-top: 300px;
 }
 
-.card-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* Het gedrag voor individuele cards */
 .card {
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   width: 280px;
-  height: 300px; /* Taller cards */
+  height: 300px; /* Kaarten zijn hoger dan breed */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -503,13 +501,14 @@ div.feed {
   transition: transform 0.3s ease;
 }
 
+/* Hover-effect voor de kaarten */
 .card:hover {
   transform: scale(1.03);
 }
 
 .card img {
   width: 100%;
-  height: 70%; /* Take up 70% of card height */
+  height: 70%; /* Laat de afbeelding 70% van de hoogte van de kaart innemen */
   object-fit: cover;
 }
 
@@ -520,7 +519,99 @@ div.feed {
   font-weight: bold;
 }
 
+/* Media query voor mobiele apparaten */
+@media (max-width: 768px) {
+  .card-section {
+    flex-direction: column; /* Zorg ervoor dat de kaarten stapelen in plaats van naast elkaar op mobiel */
+    align-items: center; /* Centreer de kaarten op kleinere schermen */
+    gap: 20px; /* Verminder de ruimte tussen de kaarten op kleinere schermen */
+  }
+
+  .card {
+    width: 80%; /* Zorg ervoor dat de kaarten 80% van de breedte op mobiele apparaten innemen */
+    height: auto; /* Maak de hoogte automatisch aanpassen op mobiel */
+  }
+}
+
+/* Media query voor desktops (grote schermen) */
+@media (min-width: 1024px) {
+  .card-section {
+    flex-wrap: wrap; /* Zorg ervoor dat de kaarten in meerdere rijen komen als ze niet passen */
+    justify-content: space-between; /* Verspreid de kaarten gelijkmatig over de breedte */
+    margin-top: 550px;
+  }
+
+  .card {
+    width: 30%; /* Zorg ervoor dat de kaarten 30% van de breedte innemen op desktop-schermen */
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #d2d2d2;
+  background-color: #ffffff; /* Lichte achtergrond voor de pagina */
+}
+
+.info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%; /* Zorgt ervoor dat de info-kaart de volledige breedte van de pagina vult */
+  padding: 20px;
+  background-color: #254117bb; /* Lichtgrijze achtergrondkleur voor de info-kaart */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
+  margin-top: 500px; /* Maakt de marge bovenaan groter zodat de kaart lager komt */
+}
+
+.image-side {
+  flex: 1 1 40%;
+  min-width: 300px;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.text-side {
+  flex: 1 1 60%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.text-side h1 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 36px; /* Standaard grootte voor de titel */
+}
+
+@media (max-width: 768px) {
+  .info-bar {
+    flex-direction: column; /* Verandert de richting naar verticaal op kleinere schermen */
+    margin-top: 100px; /* Maakt de marge bovenaan groter zodat de kaart lager komt */
+  }
+
+  .image-side {
+    display: none;
+  }
+
+  .text-side {
+    flex: 1 1 100%; /* Zorgt ervoor dat de tekst de volledige breedte gebruikt op mobiel */
+    padding-top: 10px;
+  }
+
+  .text-side h1 {
+    font-size: 28px; /* Kleinere titel voor mobiele apparaten */
+  }
+}
+
