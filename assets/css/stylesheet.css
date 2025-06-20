@@ -1,433 +1,329 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ffffff;
+  color: #254117;
+}
 
-header
-{
+/* HEADER & LOGO */
+header {
   position: absolute;
   left: 30px;
   top: 10px;
+  z-index: 1000;
+  color: white;
 }
 
-.site-identity h1
-{
+.site-identity h1 {
   font-size: 1.5em;
   margin: .6em 0;
   display: inline-block;
 }
 
-.site-navigation ul,
-.site-navigation li
-{
-  margin: 0;
-  padding: 0;
-}
-
-.scroll-fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.scroll-fade.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.site-navigation li
-{
-  display: inline-block;
-  margin: 1.4em 1em 1em 1em;
-}
-
-.background
-{
+/* NAVIGATIE */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: #254117;
-  background-image: url('../images/sahara.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  display: grid;
-  background-position: center;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.background_blur
-{
-  background-color: black;
-  background-image: url('Pictures/Banner_blur.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  display:grid;
-}
-
-.headLink
-{
-  font-size: 17px;
-  text-align: left;
-  line-height: 36px;
-  font-family: Verdana, sans-serif;
-  font-variant: small-caps;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-}
-
-a:link,
-a:visited,
-a:hover,
-a:active
-{
-     text-decoration: none;
-}
-
-a
-{
-  color: #e6e6e6;
-}
-
-h1
-{
-  font-family: Arial, sans-serif;
-  font-size: 50px;
-  color: #dddddd;
-  margin: 0;
-  padding: 20px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.one h1 {
-  text-align: center;
-  text-transform: uppercase;
-  padding-bottom: 5px;
-  padding-top: 100px;
-  font-weight: normal;
-  letter-spacing: 20px;
-}
-
-.one h1:before {
-  width: 28px;
-  height: 5px;
-  display: block;
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  left: 50%;
-  margin-left: -14px;
-  background-color: #254117;
-}
-
-.one h1:after {
-  width: 100px;
-  height: 1px;
-  display: block;
-  content: "";
-  position: relative;
-  margin-top: 25px;
-  left: 50%;
-  margin-left: -50px;
-  background-color: #254117;
-}
-
-.wrapper{
-  display:inline-flex;
-  position: absolute;
-  right: 30px;
-  top: 30px;
-}
-
-.wrapper .icon{
-  margin: 0 20px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  position: relative;
-  z-index:2;
-}
-
-.wrapper .icon span{
-  position:relative;
-  z-index:2;
-  height: 40px;
-  width: 40px;
-  display:block;
-  background: #d9d9d9;
-  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-  border-radius:50%;
-  text-align:center;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .icon span i{
-  font-size:25px;
-  line-height:60px;
-}
-
-.wrapper .icon .tooltip{
-  position:absolute;
-  top:0px;
-  background: #fff;
-  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-  font-size: 20px;
-  padding: 10px 18px;
-  border-radius: 25px;
-  color:white;
-  opacity:0;
-  pointer-events: none;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .icon .tooltip:before{
-  position:absolute;
-  content:"";
-  height:15px;
-  width:15px;
-  bottom:-8px;
-  left:50%;
-  transform: translateX(-50%) rotate(45deg);
-}
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip{
-  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
-}
-.wrapper .icon:hover span{
-  color: #fff;
-}
-
-.wrapper .instagram:hover span,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip:before{
-  background:#d62976;
-}
-.wrapper .soundcloud:hover span,
-.wrapper .soundcloud:hover .tooltip,
-.wrapper .soundcloud:hover .tooltip:before{
-  background:#ff7700;
-}
-.wrapper .youtube:hover span,
-.wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip:before{
-  background:#de463b;
-}
-
-svg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    padding-top: 10px;
-}
-
-#image-gallery {
-  width: 600px;
-  margin: 0 auto;
-}
-
-#current-image {
-  width: 100%;
-  margin-top: 40px;
-  border: 2px solid #1a1a1a;
-}
-
-#image-thumbs {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  gap: 2rem;
+  padding: 1rem;
 }
 
-.thumb {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  margin-right: 10px;
-  cursor: pointer;
+nav a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-variant: small-caps;
+  font-weight: 600;
 }
 
-div.feed {
-  margin-top: 100px;
+
+.top-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-.logo img {
-  height: 350px;
-  width: auto;
-  display: block;
+.background-video {
   position: absolute;
-  top: 30%;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Optional dark overlay */
+.top-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+  z-index: 1;
+}
+
+.banner-text h1 {
+  font-size: 3rem; /* bigger main heading */
+}
+
+.banner-text p {
+  font-size: 1.5rem; /* bigger subtitle */
+}
+
+
+.banner-text {
+  position: absolute;
+  top: 60%; /* adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  z-index: 10;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.logo {
+  position: absolute;
+  top: 30%; /* adjust vertical positioning */
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-}
-.logo {
-  padding: 10px;
+  height: 350px; /* control logo size */
+  z-index: 10;
 }
 
-.inschrijven-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 250px auto 40px auto;
-  align-items: center;
-  height: 60vh;
-}
 
-.inschrijven-buttons button {
-  padding: 70px 130px;
-  font-size: 18px;
-  background-color: #254117;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  opacity: 0.9;
-}
-
-.inschrijven-buttons button:hover {
-  background-color: #17280e;
-  opacity: 0.7;
-}
-
-/* Default (hidden) logo style */
-.logo-mobile {
-  display: none;  /* Hide logo by default */
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 1000; /* Ensure it's above other content */
-}
-
-.logo-mobile img {
-  width: 130px; /* Adjust logo size */
+/* LOGO OVERLAY */
+.logo img {
+  max-width: 100%;
   height: auto;
-  display: block;
-  margin: 0;
+  width: 300px; /* default desktop width */
+  max-height: 350px;
 }
 
 
-/* Responsive styles */
+/* SECTIES */
+section {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+  scroll-margin-top: 100px;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #254117;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+/* GALERIJ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* KNOPPEN */
+.btn {
+  display: inline-block;
+  background: #254117;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #17280e;
+}
+
+/* ROUTE */
+.route {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.route img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.route div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+footer form {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+footer form input,
+footer form textarea {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+footer form button {
+  background: #254117;
+  color: white;
+  padding: 1rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer form button:hover {
+  background: #17280e;
+}
+
+/* FAQ */
+#faq {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem 0;
+  cursor: pointer;
+  color: #254117;
+  transition: color 0.3s;
+}
+
+.faq-question:hover {
+  color: #17280e;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0.5rem 0 1rem 0;
+  color: #333;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .logo-mobile {
-    display: block;  /* Show the logo on mobile */
+  .banner-text h1 {
+    font-size: 2rem;
   }
 
-  header {
-    position: static;
-    text-align: center;
-    padding: 10px;
+  .btn {
+    width: 100%;
+    padding: 1rem;
   }
 
-  .wrapper {
-    position: static;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 10px 0;
-  }
-
-  .site-navigation li {
-    display: block;
-    text-align: center;
-    margin: 1em 0;
+  nav {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .logo img {
-    position: static;
-    max-width: 90%;
-    height: auto;
-    transform: none;
-    margin: 20px auto;
+    width: 150px; /* scale down for mobile */
+    max-height: none;
   }
 
-  #image-gallery {
+  footer form {
     width: 100%;
     padding: 0 10px;
   }
-
-  .thumb {
-    width: 60px;
-    height: 60px;
-  }
-
-  .site-identity h1 {
-    font-size: 1.2em;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 32px;
-    padding: 10px;
-  }
-
-  .one h1 {
-    padding-top: 60px;
-    letter-spacing: 10px;
-  }
-
-  svg {
-    width: 100%;
-    height: auto;
-  }
 }
 
+/* --- Hamburger menu default hidden --- */
+.hamburger-menu {
+  display: none;
+}
 
-/* Responsive styles */
+/* --- Mobiele navigatie --- */
+.site-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* RESPONSIVE STYLES */
 @media (max-width: 768px) {
-  /* Hide social buttons on mobile */
-  .wrapper {
-    display: none;
-  }
-
-  /* Hamburger menu for navigation */
-  .site-navigation {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    background-color: #254117;
-    width: 100%;
-    text-align: center;
-    z-index: 5;
-  }
-
-  .site-navigation.active {
-    display: block;
-  }
-
-  .site-navigation ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .site-navigation li {
-    margin: 1em 0;
-    display: block;
-  }
-
-  /* Hamburger icon */
   .hamburger-menu {
     display: block;
     cursor: pointer;
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 10;
+    z-index: 9999;
   }
 
   .hamburger-menu div {
     width: 30px;
     height: 4px;
-    background-color: #e6e6e6;
+    background-color: #ffffff;
     margin: 6px 0;
     transition: 0.4s;
   }
 
   .hamburger-menu.active div:nth-child(1) {
-    transform: rotate(-45deg);
-    position: relative;
-    top: 8px;
+    transform: rotate(-45deg) translate(-6px, 6px);
   }
 
   .hamburger-menu.active div:nth-child(2) {
@@ -435,183 +331,161 @@ div.feed {
   }
 
   .hamburger-menu.active div:nth-child(3) {
-    transform: rotate(45deg);
-    position: relative;
-    top: -8px;
+    transform: rotate(45deg) translate(-6px, -6px);
   }
 
-  .hamburger-menu.active + .site-navigation {
-    display: block;
-  }
-
-  .inschrijven-buttons {
-    display: flex;
-    justify-content: space-between;  /* Distribute buttons evenly */
-    gap: 10px;  /* Optional: Add some space between buttons */
-    margin: 20px auto;
-    width: 100%; /* Make the container full-width */
-  }
-
-  .inschrijven-buttons button {
-    width: 48%;  /* Make buttons take up 48% of the container width (leaving some space between them) */
-    padding: 20px;
-    font-size: 16px;  /* Adjust font size for mobile */
-    font-weight: 600;
+  .site-navigation {
+    display: none;
+    flex-direction: column;
     background-color: #254117;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    opacity: 0.9;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    z-index: 999;
+  }
+
+  .site-navigation.active {
+    display: flex;
+  }
+
+  .site-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-navigation li {
+    margin: 1em 0;
+  }
+
+  .site-navigation a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
   }
 }
 
-.card-section {
-  width: 100vw;
-  padding: 40px 5%;
-  background-color: #254117bb;
-  display: flex;
-  flex-wrap: wrap; /* Zorg ervoor dat de kaarten in meerdere rijen kunnen komen als er niet genoeg ruimte is */
-  gap: 30px; /* Ruimte tussen de kaarten */
-  align-items: center; /* Zorg ervoor dat de kaarten verticaal gecentreerd zijn */
-  justify-content: center; /* Centrerende opstelling */
-  box-sizing: border-box;
+.desktop-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #254117;
+  padding: 1rem;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+  transition: top 0.5s ease;
+}
+
+nav.hidden-on-home {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  z-index: 999;
-  margin-top: 300px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
-/* Het gedrag voor individuele cards */
-.card {
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  width: 280px;
-  height: 300px; /* Kaarten zijn hoger dan breed */
+nav.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.desktop-nav.hidden-on-home {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.desktop-nav.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* === Standaard (desktop): === */
+.hamburger-menu,
+#mobileNav {
+  display: none;
+}
+
+.desktop-nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #254117;
+  padding: 1rem;
 }
 
-/* Hover-effect voor de kaarten */
-.card:hover {
-  transform: scale(1.03);
-}
-
-.card img {
-  width: 100%;
-  height: 70%; /* Laat de afbeelding 70% van de hoogte van de kaart innemen */
-  object-fit: cover;
-}
-
-.card p {
-  padding: 20px 10px;
-  font-size: 16px;
-  color: #254117;
-  font-weight: bold;
-}
-
-/* Media query voor mobiele apparaten */
+/* === Mobiel: onder 768px schermbreedte === */
 @media (max-width: 768px) {
-  .card-section {
-    flex-direction: column; /* Zorg ervoor dat de kaarten stapelen in plaats van naast elkaar op mobiel */
-    align-items: center; /* Centreer de kaarten op kleinere schermen */
-    gap: 20px; /* Verminder de ruimte tussen de kaarten op kleinere schermen */
+  .hamburger-menu {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
   }
 
-  .card {
-    width: 80%; /* Zorg ervoor dat de kaarten 80% van de breedte op mobiele apparaten innemen */
-    height: auto; /* Maak de hoogte automatisch aanpassen op mobiel */
-  }
-}
-
-/* Media query voor desktops (grote schermen) */
-@media (min-width: 1024px) {
-  .card-section {
-    flex-wrap: wrap; /* Zorg ervoor dat de kaarten in meerdere rijen komen als ze niet passen */
-    justify-content: space-between; /* Verspreid de kaarten gelijkmatig over de breedte */
-    margin-top: 550px;
+  .hamburger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
   }
 
-  .card {
-    width: 30%; /* Zorg ervoor dat de kaarten 30% van de breedte innemen op desktop-schermen */
-  }
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #d2d2d2;
-  background-color: #ffffff; /* Lichte achtergrond voor de pagina */
-}
-
-.info-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  width: 100%; /* Zorgt ervoor dat de info-kaart de volledige breedte van de pagina vult */
-  padding: 20px;
-  background-color: #254117bb; /* Lichtgrijze achtergrondkleur voor de info-kaart */
-
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
-  margin-top: 500px; /* Maakt de marge bovenaan groter zodat de kaart lager komt */
-}
-
-.image-side {
-  flex: 1 1 40%;
-  min-width: 300px;
-}
-
-.image-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.text-side {
-  flex: 1 1 60%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.text-side h1 {
-  margin-top: 0;
-  color: #ffffff;
-  font-size: 36px; /* Standaard grootte voor de titel */
-}
-
-@media (max-width: 768px) {
-  .info-bar {
-    flex-direction: column; /* Verandert de richting naar verticaal op kleinere schermen */
-    margin-top: 100px; /* Maakt de marge bovenaan groter zodat de kaart lager komt */
+  .hamburger-menu.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
   }
 
-  .image-side {
+  .hamburger-menu.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+  }
+
+  #mobileNav {
+    display: none;
+    flex-direction: column;
+    background-color: #254117;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 999;
+    text-align: center;
+  }
+
+  #mobileNav.active {
+    display: flex;
+  }
+
+  #mobileNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #mobileNav li {
+    margin: 1em 0;
+  }
+
+  #mobileNav a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .desktop-nav {
     display: none;
   }
-
-  .text-side {
-    flex: 1 1 100%; /* Zorgt ervoor dat de tekst de volledige breedte gebruikt op mobiel */
-    padding-top: 10px;
-  }
-
-  .text-side h1 {
-    font-size: 28px; /* Kleinere titel voor mobiele apparaten */
-  }
 }
+
 

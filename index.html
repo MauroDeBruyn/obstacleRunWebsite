@@ -4,46 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Obstacle Run 2025</title>
-    <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./assets/css/stylesheet.css">
 </head>
 <body>
 
   <div class="hamburger-menu" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-<nav class="site-navigation" id="mobileNav">
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#galerij">Galerij</a></li>
-    <li><a href="#route">Route</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <nav class="site-navigation" id="mobileNav">
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#parcours">PARCOURS</a></li>
+      <li><a href="#galerij">GALERIJ</a></li>
+      <li><a href="#inschrijven">INSCHRIJVEN</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
 
-
-  <div class="top-banner">
-    <img class="logo" src="logo-placeholder.png" alt="Logo Obstacle Run">
+  <!-- Photo Background
+  <div class="top-banner" id="home">
+    <img class="logo" src="./assets/images/logo-Placeholder.jpg" alt="Logo Obstacle Run">
     <div class="banner-text">
-        <h1>Obstacle Run 2025</h1>
+        <h1>Desert Fire Run 2025</h1>
         <p>De spannendste uitdaging van het jaar!</p>
     </div>
   </div>
+  -->
 
-  <nav class="desktop-nav">
-  <a href="#info">Info</a>
-  <a href="#parcours">Parcours</a>
-  <a href="#galerij">Galerij</a>
-  <a href="#inschrijven">Inschrijven</a>
-  <a href="#sponsors">Sponsors</a>
-  <a href="#goededoel">Goede Doel</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <div class="top-banner" id="home">
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="./assets/videos/sahara.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="logo">
+    <img src="./assets/images/DFRLogo.png" alt="Logo Obstacle Run" />
+  </div>
+  <div class="banner-text">
+    <h1>Desert Fire Run 2025</h1>
+    <p>De spannendste uitdaging van het jaar!</p>
+  </div>
+</div>
 
+
+  <nav class="desktop-nav hidden-on-home" id="mainNav">
+    <a href="#home">HOME</a>
+    <a href="#parcours">PARCOURS</a>
+    <a href="#galerij">GALERIJ</a>
+    <a href="#inschrijven">INSCHRIJVEN</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
 
   <section id="info">
     <h2>Over het evenement</h2>
@@ -55,27 +69,27 @@
     </ul>
   </section>
 
-  <section id="parcours">
-    <h2>Parcours</h2>
+  <section id="parcour">
+    <h2>Parcour</h2>
     <div class="route">
       <div>
-        <img src="images/parcour5.png" alt="Parcours 5km">
+        <img src="./assets/images/parcour5.png" alt="Parcours 5km">
         <p>🏃‍♂️ De 5 km route is perfect voor beginnende lopers die op een speelse manier willen kennismaken met obstakels. Het terrein is gevarieerd met modder, heuvels en een paar verrassingen.</p>
       </div>
       <div>
-        <img src="images/parcour8.png" alt="Parcours 8.5km">
+        <img src="./assets/images/parcour8.png" alt="Parcours 8.5km">
         <p>🔥 De 8.5 km route is voor wie écht uitgedaagd wil worden. Deze route bevat zwaardere obstakels, meer hoogteverschillen en extra modderzones. Niet voor watjes!</p>
       </div>
     </div>
   </section>
 
-  <section id="galerij">
-    <h2>Foto's & Video</h2>
+  <section id="GALERIJ">
+    <h2>GALERIJ</h2>
     <div class="gallery">
-      <img src="placeholder1.jpg" alt="Obstacle 1">
-      <img src="placeholder2.jpg" alt="Obstacle 2">
-      <img src="placeholder3.jpg" alt="Obstacle 3">
-      <img src="placeholder4.jpg" alt="Obstacle 4">
+      <img src="placeholder1.PNG" alt="Obstacle 1">
+      <img src="placeholder2.PNG" alt="Obstacle 2">
+      <img src="placeholder3.PNG" alt="Obstacle 3">
+      <img src="placeholder4.PNG" alt="Obstacle 4">
     </div>
   </section>
 
@@ -101,7 +115,7 @@
   </section>
 
 <section id="faq">
-  <h2>Veelgestelde Vragen</h2>
+  <h2>Frequently Asked Questions (FAQ)</h2>
   <div class="faq-item">
     <button class="faq-question">Moet ik getraind zijn om mee te doen?</button>
     <div class="faq-answer">
@@ -122,43 +136,60 @@
   </div>
 </section>
 
-
-<footer id="contact">
-  <h2>Contacteer ons</h2>
-  <form action="https://formspree.io/f/xpwplkvy" method="POST">
-    <label for="name">Naam:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">E-mailadres:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Bericht:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-
-    <button type="submit">Verzenden</button>
-  </form>
+  <footer id="contact">
+    <h2>Contacteer ons</h2>
+    <form action="https://formspree.io/f/xpwplkvy" method="POST">
+      <label for="name">Naam:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">E-mailadres:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Bericht:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Verzenden</button>
+    </form>
   </footer>
 
-<footer>
-  <p>📧 Contact: info@obstaclerun2025.be | 📞 012 34 56 78</p>
-  <p>&copy; 2025 Obstacle Run. Alle rechten voorbehouden.</p>
-</footer>
+  <footer>
+    <p>📧 Contact: info@FDR2025.be | 📞 012 34 56 78</p>
+    <p>&copy; 2025 Obstacle Run. All Rights Reserved.</p>
+  </footer>
 
-<script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const item = button.parentElement;
-      item.classList.toggle('active');
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
     });
-  });
-  function toggleMenu() {
-    const nav = document.getElementById("mobileNav");
-    const hamburger = document.querySelector(".hamburger-menu");
-    nav.classList.toggle("active");
-    hamburger.classList.toggle("active");
-  }
-</script>
 
+    function toggleMenu() {
+      const nav = document.getElementById("mobileNav");
+      const hamburger = document.querySelector(".hamburger-menu");
+      nav.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    }
+  </script>
+
+  <script>
+    const desktopNav = document.getElementById('mainNav');
+    const topBanner = document.querySelector('.top-banner');
+
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      const bannerHeight = topBanner.offsetHeight;
+
+      if (scrollY > bannerHeight - 100) {
+        desktopNav.classList.add('visible');
+        desktopNav.classList.remove('hidden-on-home');
+      } else {
+        desktopNav.classList.add('hidden-on-home');
+        desktopNav.classList.remove('visible');
+      }
+    }
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+  </script>
 
 </body>
 </html>
