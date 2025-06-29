@@ -22,6 +22,12 @@ header {
   display: inline-block;
 }
 
+.separator {
+  width: 2px;
+  height: 120px;  /* adjust as needed */
+  background-color: white;
+}
+
 /* NAVIGATIE */
 nav {
   position: sticky;
@@ -41,17 +47,13 @@ nav a {
   font-weight: 600;
 }
 
-
 .top-banner {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   color: white;
+  background: url('./assets/images/sahara-fallback.jpg') no-repeat center center/cover;
 }
 
 .background-video {
@@ -64,6 +66,7 @@ nav a {
   z-index: 0;
 }
 
+
 /* Optional dark overlay */
 .top-banner::after {
   content: '';
@@ -73,8 +76,27 @@ nav a {
   z-index: 1;
 }
 
+.banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row; /* makes sure items sit side by side */
+  align-items: center; /* vertically center */
+  justify-content: center; /* center horizontally in banner */
+  gap: 40px; /* space between logo, line, and text */
+  height: auto;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.banner-text {
+  color: white;
+  text-align: left;
+}
+
 .banner-text h1 {
-  font-size: 3rem; /* bigger main heading */
+  font-size: 3rem;
+  margin: 0;
 }
 
 .banner-text p {
@@ -105,12 +127,9 @@ nav a {
 
 /* LOGO OVERLAY */
 .logo img {
-  max-width: 100%;
+  width: 200px;  /* adjust as needed */
   height: auto;
-  width: 300px; /* default desktop width */
-  max-height: 350px;
 }
-
 
 /* SECTIES */
 section {
@@ -264,33 +283,6 @@ footer form button:hover {
   display: block;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .banner-text h1 {
-    font-size: 2rem;
-  }
-
-  .btn {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .logo img {
-    width: 150px; /* scale down for mobile */
-    max-height: none;
-  }
-
-  footer form {
-    width: 100%;
-    padding: 0 10px;
-  }
-}
-
 /* --- Hamburger menu default hidden --- */
 .hamburger-menu {
   display: none;
@@ -301,71 +293,6 @@ footer form button:hover {
   display: flex;
   justify-content: center;
   gap: 2rem;
-}
-
-/* RESPONSIVE STYLES */
-@media (max-width: 768px) {
-  .hamburger-menu {
-    display: block;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-  }
-
-  .hamburger-menu div {
-    width: 30px;
-    height: 4px;
-    background-color: #ffffff;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-
-  .hamburger-menu.active div:nth-child(1) {
-    transform: rotate(-45deg) translate(-6px, 6px);
-  }
-
-  .hamburger-menu.active div:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger-menu.active div:nth-child(3) {
-    transform: rotate(45deg) translate(-6px, -6px);
-  }
-
-  .site-navigation {
-    display: none;
-    flex-direction: column;
-    background-color: #254117;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    z-index: 999;
-  }
-
-  .site-navigation.active {
-    display: flex;
-  }
-
-  .site-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .site-navigation li {
-    margin: 1em 0;
-  }
-
-  .site-navigation a {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #ffffff;
-  }
 }
 
 .desktop-nav {
@@ -488,4 +415,167 @@ nav.visible {
   }
 }
 
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
 
+  .hamburger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .hamburger-menu.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+  }
+
+  .hamburger-menu.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+  }
+
+  .site-navigation {
+    display: none;
+    flex-direction: column;
+    background-color: #254117;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    z-index: 999;
+  }
+
+  .site-navigation.active {
+    display: flex;
+  }
+
+  .site-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-navigation li {
+    margin: 1em 0;
+  }
+
+  .site-navigation a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .banner-text h1 {
+    font-size: 2rem;
+  }
+
+  .banner-text {
+    text-align: center;
+  }
+
+  .banner-text p {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  footer form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .separator {
+    display: none;
+  }
+}
+
+/*Code for info cards*/
+@import url('https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css'); 
+
+.grid-container {
+  width: min(75rem, 100%);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+  gap: 2rem;
+}
+.card {
+  --grad: rgb(255, 255, 255), #254117;
+  padding: 2.5rem;
+  background-image: linear-gradient(to bottom left, #e0e4e5, #f2f6f9);
+  border-radius: 2rem;
+  gap: 1.5rem;
+  display: grid;
+  grid-template: 'title icon' 'content content' 'bar bar' / 1fr auto;
+  font-family: system-ui, sans-serif;
+  color: #254117;
+  box-shadow: 
+    inset -2px 2px hsl(0 0 100% / 1),
+    -20px 20px 40px hsl(0 0 0 / .25) ;
+  
+  .title {
+    font-size: 1.5rem;
+    grid-area: title;
+    align-self: end;
+    text-transform: uppercase;
+    font-weight: 500;
+    word-break: break-all;
+    
+  }
+  .icon {
+    grid-area: icon;
+    font-size: 3rem;
+    
+    > i {
+      color: transparent;
+      background: linear-gradient(to right, var(--grad));
+      background-clip: text;
+    }
+  }
+  .content {
+    grid-area: content;
+    & > *:first-child { margin-top: 0rem}
+    & > *:last-child { margin-bottom: 0rem}
+  }
+  &::after {
+    content: "";
+    grid-area: bar;
+    height: 2px;
+    background-image: linear-gradient(90deg, var(--grad));
+/*     margin-inline: -1.5rem; */
+  }
+}
