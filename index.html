@@ -6,6 +6,8 @@
   <title>Obstacle Run 2025</title>
   <link rel="stylesheet" href="./assets/css/stylesheet.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+
 </head>
 <body>
 
@@ -18,40 +20,45 @@
   <nav class="site-navigation" id="mobileNav">
     <ul>
       <li><a href="#home">HOME</a></li>
-      <li><a href="#parcours">PARCOURS</a></li>
-      <li><a href="#galerij">GALERIJ</a></li>
+      <li><a href="#parcour">PARCOURS</a></li>
+      <li><a href="#GALERIJ">GALERIJ</a></li>
       <li><a href="#inschrijven">INSCHRIJVEN</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">CONTACT</a></li>
     </ul>
   </nav>
 
+  <nav class="desktop-nav hidden-on-home" id="mainNav">
+    <a href="#home">HOME</a>
+    <a href="#parcour">PARCOUR</a>
+    <a href="#GALERIJ">GALERIJ</a>
+    <a href="#inschrijven">INSCHRIJVEN</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  
   <div class="top-banner" id="home">
     <video autoplay muted loop playsinline class="background-video">
       <source src="./assets/videos/sahara.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 
-    <div class="banner-content">
-      <div class="logo">
-        <img src="./assets/images/DFRLogo.png" alt="Logo Obstacle Run" />
+    <header>
+      <div class="site-identity">
+        <img src="./assets/images/DFRLogo.png" alt="Logo">
+        <div class="separator"></div>
+        <div class="text-block">
+          <h1>Desert Fire Run 2025</h1>
+          <p>De spannendste uitdaging van het jaar!</p>
+        </div>
       </div>
-      <div class="separator"></div>
-      <div class="banner-text">
-        <h1>Desert Fire Run 2025</h1>
-        <p>De spannendste uitdaging van het jaar!</p>
-      </div>
+    </header>
+
+    <div class="scroll-down">
+    <a href="#your-next-section">&#8595;</a>
     </div>
   </div>
-
-  <nav class="desktop-nav hidden-on-home" id="mainNav">
-    <a href="#home">HOME</a>
-    <a href="#parcours">PARCOURS</a>
-    <a href="#galerij">GALERIJ</a>
-    <a href="#inschrijven">INSCHRIJVEN</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
 
   <section id="info">
     <h2>Over het evenement</h2>
@@ -65,10 +72,10 @@
 
       <ul>🚨 Sirenes aan, adrenaline aan…</ul>
       <ul>👊 Durf jij het aan? Samen. Sterk. Onverslaanbaar.</ul>
-      <ul>🏁 Laat het avontuur beginnen!</ul>
+      <ul>🏁 Laat het avontuur beginnen!</ul><br><br>
     </p>
 
-    <h1>🚒 Alles op een rijtje</h1>
+    <h1>🚒 Alles op een rijtje</h1><br>
 
     <div class="grid-container">
         <div class="card">
@@ -166,39 +173,40 @@
   <section id="GALERIJ">
     <h2>GALERIJ</h2>
     <div class="gallery">
-      <img src="placeholder1.PNG" alt="Obstacle 1">
-      <img src="placeholder2.PNG" alt="Obstacle 2">
-      <img src="placeholder3.PNG" alt="Obstacle 3">
-      <img src="placeholder4.PNG" alt="Obstacle 4">
+      <img src="./assets/images/brandweerGroepsfoto1.png" alt="Brandweer op obstacle run">
+      <img src="./assets/images/obstakel1.png" alt="Obstakel 1">
+      <img src="./assets/images/brandweerGroepsfoto2.png" alt="Brandweer op obstacle run">
+      <img src="./assets/images/obstakel2.png" alt="Obstakel 2">
     </div>
   </section>
 
   <section id="goededoel">
-  <h2>Wij steunen het goede doel</h2>
-  <h1>💖 Samen in actie voor de Wensambulance!</h1>
-  <h>
-    Tijdens onze obstacle run zetten we niet alleen ons lichaam in beweging, maar ook ons hart.
-    Dit jaar steunen we met trots een doel dat ons allemaal raakt: de Wensambulance.
-    Deze bijzondere organisatie vervult de laatste wensen van ernstig zieke mensen – door hen
-    nog één keer naar een speciale plek te brengen, omringd door zorg, waardigheid en liefde.
-    Een laatste wens, een laatste rit, een onvergetelijk moment. 🚑💙
-    💪 Jouw deelname maakt het verschil!
-    Een deel van het inschrijvingsgeld gaat rechtstreeks naar de Wensambulance. Ook extra
-    donaties of sponsoring zijn van harte welkom. Samen helpen we om wensen werkelijkheid te
-    maken.
-    📣 Sport mee. Geef hoop. Vervul een wens.
-    <strong>Want helden tillen niet alleen muren, maar ook mensen op. ❤</strong></h>
-
-    <div>
-        <img src="./assets/images/wensAmbulancezorg.png" alt="Wens Ambulancezorg"style=" width: 500px;>
+    <h2>Wij steunen het goede doel</h2>
+    <div class="goededoel-content">
+      <div class="text">
+        <h1>💖 Samen in actie voor de Wensambulance!</h1>
+        <p>
+          Tijdens onze obstacle run zetten we niet alleen ons lichaam in beweging, maar ook ons hart.
+          Dit jaar steunen we met trots een doel dat ons allemaal raakt: de Wensambulance.
+          Deze bijzondere organisatie vervult de laatste wensen van ernstig zieke mensen – door hen
+          nog één keer naar een speciale plek te brengen, omringd door zorg, waardigheid en liefde.
+          Een laatste wens, een laatste rit, een onvergetelijk moment. 🚑💙
+          💪 Jouw deelname maakt het verschil!
+          Een deel van het inschrijvingsgeld gaat rechtstreeks naar de Wensambulance. Ook extra
+          donaties of sponsoring zijn van harte welkom. Samen helpen we om wensen werkelijkheid te
+          maken.
+          📣 Sport mee. Geef hoop. Vervul een wens.
+          <strong>Want helden tillen niet alleen muren, maar ook mensen op. ❤</strong>
+        </p>
+      </div>
+      <img src="./assets/images/wensAmbulancezorg.png" alt="Wens Ambulancezorg" style="width: 500px;">
+    </div>
   </section>
+
 
 
   <section id="inschrijven">
     <h2>Inschrijven</h2>
-    <p>📣 Schrijf je nu in en doe mee!</p>
-    <a class="btn" href="https://voorbeeld-inschrijven.be" target="_blank">Nu Inschrijven</a>
-
     <h1>🕙 Start in waves – van 10u tot 15u!</h1>
 
     <p>
@@ -248,17 +256,15 @@
       💰 <strong>Kostprijs deelname</strong><br>
       🧒 Kinderen (6 t.e.m. 12 jaar): €20<br>
       🧑 🦱 Volwassenen (vanaf 13 jaar): €39<br>
-      💳 Let op: Er wordt per ticket een servicekost aangerekend.
     </div>
+
+    <p>📣 Schrijf je nu in en doe mee!</p>
+    <a class="btn" href="https://www.godare.events/nl/events/obstacle-run-kalender/desert-fire-run" target="_blank">Nu Inschrijven</a>
+
   </section>
   
   <section id="sponsors">
     <h2>Onze Sponsors</h2>
-    <div class="sponsors">
-      <img src="sponsor1-logo.jpg" alt="Sponsor 1">
-      <img src="sponsor2-logo.jpg" alt="Sponsor 2">
-      <img src="sponsor3-logo.jpg" alt="Sponsor 3">
-    </div>
 
     <h1>🙏 Onze sponsors: de helden achter dit event!</h1>
     <p>Jullie onvermoeibare steun en vertrouwen maken dit evenement mogelijk. Zonder jullie waren de hindernissen niet te overwinnen, de uitdagingen niet aan te gaan, en het verschil voor de Wensambulance niet te maken.<pre> </pre>
@@ -266,6 +272,10 @@
     Jullie zijn de drijvende kracht achter onze missie, de onzichtbare brandweermannen en -vrouwen die dit avontuur werkelijkheid maken. Samen staan we sterk, samen creëren we impact.<pre> </pre>
     <ul> </ul>
     Van harte dank voor jullie betrokkenheid en vertrouwen. Dit succes is van ons allemaal! 🚒🔥💙</p>
+
+    <div class="sponsorsDESK">
+    <img src="./assets/images/sponsorBannerDesktop.png" alt="Sponsor">
+    </div>
   </section>
 
   <section id="praktisch">
@@ -274,8 +284,7 @@
     <h3>🅿️ Parking</h3>
     <p>
       We motiveren om zo veel mogelijk met de fiets te komen!  
-      Met de auto 🚗 ? Deze kan je op onderstaande plaatsen zetten.  
-      <strong>En dan in het groot de parkeerkaart van Lommel (zie pdf)</strong>  
+      Met de auto 🚗 ? <a href="./assets/documents/Parkeerplan De Soeverein 2025.pdf" target="_blank">Bekijk dan hier het parkeerplan.</a>
       Volg de parkeeraanwijzers zoals aangegeven.
     </p>
   </div>
@@ -305,21 +314,13 @@
   <pre> </pre>
   <ul> </ul>
 
-  <div class="section">
-    🏆🤪 <strong>Prijs voor het 'zotste' team/ploeg!</strong><br>
-    (Verkleden, attributen, brandweeruitrusting… alles mag!)
-  </div>
-
-  <pre> </pre>
-  <ul> </ul>
-
   <div class="shop">
     👕 <strong>Limited Edition Event-T-shirts te koop!</strong><br>
-    Wil jij een blijvende herinnering aan jouw heldhaftige obstacle run? Scoor dan één van onze exclusieve event-T-shirts!<br><br>
-    🛍️ Te koop ter plaatse in het startdorp – zolang de voorraad strekt.<br>
-    💸 Prijs: € [vul in] per stuk.<br>
+    Wil jij een blijvende herinnering aan jouw heldhaftige obstacle run? Scoor dan één van onze exclusieve event-T-shirts gemaakt uit degelijk sportstof! <br><br>
+    🛍️ Te koop ter plaatse in het evenementendorp en ook bij de inschrijving! <br>
+    💸 Prijs: € 25 per stuk voor volwassenen en 15 euro voor de kids.<br>
     📏 Verkrijgbaar in verschillende maten (kids & volwassenen).<br><br>
-    Of je nu druipend van de modder finisht of juichend over de streep gaat – met dit shirt laat je zien dat jij erbij was! 💪🔥
+    Of je nu druipend van de modder finisht of juichend over de streep gaat – met dit shirt laat je zien dat jij erbij was! 💪🔥<br><br>
   </div>
 
   <div class="note">
@@ -334,19 +335,35 @@
   <div class="faq-item">
     <button class="faq-question">Moet ik getraind zijn om mee te doen?</button>
     <div class="faq-answer">
-      <p>Nee hoor! De 5 km route is ideaal voor beginners en plezier staat voorop. Wel is een basisconditie aangeraden.</p>
+      <p>Nee hoor! De routes zijn ideaal voor beginners, het is geen wedstrijd, plezier staat voorop. Wel is een basisconditie aangeraden. </p>
     </div>
   </div>
+
   <div class="faq-item">
     <button class="faq-question">Wat moet ik meenemen?</button>
     <div class="faq-answer">
       <p>Goede loopschoenen, een handdoek, droge kledij en veel zin in avontuur!</p>
     </div>
   </div>
+
   <div class="faq-item">
     <button class="faq-question">Kan ik me ter plaatse inschrijven?</button>
     <div class="faq-answer">
       <p>Neen, inschrijven moet op voorhand via onze website. De plaatsen zijn beperkt.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Hoe ben ik verzekerd</button>
+    <div class="faq-answer">
+      <p>Bij meer informatie rond verzekering kan je <a href="./assets/documents/algemeneVoorwaardenDesertFireRun.pdf" target="_blank">hier</a> onze algemene voorwaarden raadplegen.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Tot wanneer kan ik inschrijven?</button>
+    <div class="faq-answer">
+      <p>Inschrijven kan tot en met 18/09/2025</p>
     </div>
   </div>
 </section>
@@ -364,10 +381,36 @@
     </form>
   </footer>
 
-  <footer>
-    <p>📧 Contact: desert.fire.run@outlook.com</p>
-    <p>&copy; 2025 Obstacle Run. All Rights Reserved.</p>
-  </footer>
+<footer style="position: relative; background: #222;">
+  <p>📧 Contact: desert.fire.run@outlook.com</p>
+  <p>&copy; 2025 Obstacle Run. All Rights Reserved.</p>
+
+  <div class="footer-logos">
+    <a href="https://www.sport.vlaanderen/" target="_blank">
+      <img src="./assets/images/sportVlaanderenLogo.png" alt="Sport Vlaanderen">
+    </a>
+    <a href="https://www.lommel.be/" target="_blank">
+      <img src="./assets/images/lommelLogo.png" alt="Stad Lommel">
+    </a>
+    <a href="https://noord-limburg.hulpverleningszone.be/" target="_blank">
+      <img src="./assets/images/hvznlLogo.png" alt="HVZNL">
+    </a>
+    <a href="https://scoutinglommel.be" target="_blank">
+      <img src="./assets/images/scoutingLommelLogo.png" alt="Scouting Lommel">
+    </a>
+  </div>
+
+
+
+  <div class="footer-social-icons">
+      <h4 class="_14">Volg ons</h4>
+      <ul class="social-icons">
+          <li><a href="https://fb.me/e/6qqBuLl6T" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.instagram.com/desertfirerun/" class="social-icon"> <i class="fa fa-instagram"></i></a></li>
+      </ul>
+  </div>
+</footer>
+
 
   <script>
     document.querySelectorAll('.faq-question').forEach(button => {
@@ -406,5 +449,23 @@
     window.addEventListener('scroll', handleScroll);
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+      });
+    });
+  });
+  </script>
 </body>
 </html>
