@@ -15,7 +15,7 @@
   </a>
 </p>
 
-![Project Banner](./resources/media/banner.png)
+![Project Banner](./banner.png)
 
 <h4 align="center"> 
    Status: ✅ Completed
@@ -108,4 +108,4 @@ Planned / possible improvements:
 Thanks to everyone who has contributed to this project!
 
 - **Mauro De Bruyn** – Author / Developer – [GitHub](https://github.com/MauroDeBruyn)  
-- **Contributor Name** – Role – [GitHub](https://github.com/SwinnenBram)  
+- **Bram Swinnen** – Developer – [GitHub](https://github.com/SwinnenBram)  
